@@ -3,7 +3,7 @@ def lcm(a, b):
  
 def gcd(a, b):
 	if (a % b == 0 or b % a == 0):
-			return math.min(a, b)
+		return math.min(a, b)
 	else:
 		newNum = math.max(a, b) - (long)(math.max(a, b) / math.min(a, b)) * math.min(a, b)
 		return gcd(newNum, math.min(a, b))
