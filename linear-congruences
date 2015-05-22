@@ -11,7 +11,7 @@ def gcd(a, b):
 def linearCombo(a, b):
 	if (a - b == gcd(a, b)):
 		combo = {a, b}
-    	return combo
+    		return combo
 	rem1 = Math.max(a, b)
 	rem2 = Math.min(a, b)
 	firstCoef1 = 1
