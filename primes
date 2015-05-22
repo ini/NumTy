@@ -142,7 +142,7 @@ def ulamSpiral(size):
 	count = 0
 	length = 1
 	spiral = [[0 for x in range(size)] for x in range(size)] 
-	for a in xrange (0, size ** 2 - 1):
+	for a in xrange (0, size ** 2):
 		spiral[row][col] = a + 1
 		count += 1
 		if (count == length):
