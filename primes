@@ -133,3 +133,32 @@ def primeFactorization(num):
 			if factorCount > 0:
 				pFactor.append((prime, factorCount))
 	return pFactor
+
+def ulamSpiral(size):
+	row = size/2
+	col = size/2
+	direction = 0
+	changeCount = -1
+	count = 0
+	length = 1
+	spiral = [[0 for x in range(size)] for x in range(size)] 
+	for a in xrange (0, size ** 2 - 1):
+		spiral[row][col] = a + 1
+		count += 1
+		if (count == length):
+			count = 0
+			changeCount += 1
+			direction += 1
+			direction = ((direction - 1) % 4) + 1
+		if (direction == 1):
+			col += 1
+		elif (direction == 2):
+			row += 1
+		elif (direction == 3):
+			col -= 1
+		elif (direction == 4):
+			row -= 1
+		if (changeCount == 2):
+			length += 1
+			changeCount = 0
+	return spiral
