@@ -43,6 +43,8 @@ def mobius(n):
 	return -1
 	
 def d(n):
+	if n == 0:
+		return 0
 	product = 1
 	pFactor = ps.primeFactorization(n)
 	for term in pFactor:
@@ -50,6 +52,8 @@ def d(n):
 	return product
 	
 def sigma(n):
+	if n == 0:
+		return 0
 	product = 1
 	pFactor = ps.primeFactorization(n)
 	for term in pFactor:
