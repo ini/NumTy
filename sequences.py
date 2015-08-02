@@ -75,11 +75,13 @@ def lookAndSay(n):
 
 def prime(n):
 	# Returns the nth prime
+	if n == 1 or n == 2:
+		return n + 1
 	upperBound = n
 	for i in xrange(0, 20):
 		# Uses Newton's Method to approximate an upper bound, given n = pi(x) > x/lnx 
 		f = 1 * upperBound / math.log(upperBound) - n
-		f_deriv = 1 * (math.log(upperBound) - 1) / (math.log(upperBound) ** 2)
+		f_deriv = (math.log(upperBound) - 1) / (math.log(upperBound) ** 2)
 		upperBound -= f / f_deriv
 	return ps.sieve(int(math.ceil(upperBound)))[n - 1]
 
