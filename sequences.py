@@ -1,6 +1,6 @@
 from fractions import Fraction as Fr
-import primes as py
-import multiplicative-functions as mf
+import primes as ps
+import multiplicative_functions as mf
 import math
 
 def additiveSequence(n, t0, t1):
@@ -83,7 +83,7 @@ def prime(n):
 		f = 1 * upperBound / math.log(upperBound) - n
 		f_deriv = (math.log(upperBound) - 1) / (math.log(upperBound) ** 2)
 		upperBound -= f / f_deriv
-	return ps.sieve(int(math.ceil(upperBound)))[n - 1]
+	return ps.atkin(int(math.ceil(upperBound)))[n - 1]
 
 def catalan(n):
 	product = 1
