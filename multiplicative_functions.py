@@ -1,14 +1,20 @@
-import linear-congruences as lc
-import legendre-symbol as ls
+import linear_congruences as lc
+import quadratic_residues as qr
 import primes as ps
 
-primeNumber = 7  # For legendre symbol evaluation
+n = 7  # For Legendre, Jacobi and Kronecker symbol evaluation
 
 def gcd(a, b):
   return lc.gcd(a, b)
 
-def legendre(n):
-  return ls.legendre(n, primeNumber)
+def legendre(a):
+  return qr.legendre(a, n)
+
+def jacobi(a):
+  return qr.jacobi(a, n)
+
+def kronecker(a):
+  return qr.kronecker(a)
 
 def one(n):
 	return 1
