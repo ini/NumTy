@@ -19,6 +19,8 @@ def miller_rabin_pass(a, n):
         return a_to_power == n - 1
 
 def isPrime(n):
+        if n < 2:
+                return False
         # Uses Miller-Rabin primality test
         for repeat in xrange(20):
                 a = 0
