@@ -45,15 +45,15 @@ def twinPrimes(num):
     
 def sieve(n):
         # Uses Sieve of Eratosthenes to generate list of primes below n
-        sqrtn = int(n**0.5)
-        sieve = [True] * (n+1)
+        sqrtn = int(n ** 0.5)
+        sieve = [True] * (n + 1)
         sieve[0] = False
         sieve[1] = False
 
-        for i in range(2, sqrtn+1):
+        for i in range(2, sqrtn + 1):
                 if sieve[i]:
-                        m = n//i - i
-                        sieve[i*i:n+1:i] = [False] * (m+1)
+                        m = n // i - i
+                        sieve[i*i: n + 1 :i] = [False] * (m + 1)
 
         sieve = [i for i in range(n+1) if sieve[i]]
         return sieve
@@ -61,6 +61,11 @@ def sieve(n):
 def atkin(num):
         # Uses Sieve of Atkin to generate list of primes below n
         primes = [0] * (num + 1)
+        if num < 2:
+                return []
+        if num == 2:
+                return 2
+        
         # n = 3x^2 + y^2
         threexSquared = 3
         for dxSquared in xrange(0, 12 * int(math.sqrt(( num - 1 ) / 3)), 24):
@@ -131,6 +136,10 @@ def atkin(num):
                         for k in range(n * n, num, n * n):
                                 primes[k] = False
         return [2,3] + filter(primes.__getitem__, xrange(5, num, 2))
+
+def pi(n):
+        # Returns the number of primes less than or equal to n
+        return len(atkin(n))
 
 def getFactor(n):
         # Uses Brent's version of the Pollard rho factorization method to generate one of the factors of n
