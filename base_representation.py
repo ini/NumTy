@@ -11,10 +11,9 @@ def decimalToBase(num, base):
 	elif (base < 1):
 		return
 		
-	exp = 0
+	exp = -1
 	while (base ** exp <= num):
 		exp += 1
-	exp -= 1
 	
 	remainder = num
 	newBase = ""
