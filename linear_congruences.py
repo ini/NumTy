@@ -2,11 +2,9 @@ def lcm(a, b):
 	return a * b / gcd(a, b)
  
 def gcd(a, b):
-	if (a % b == 0 or b % a == 0):
-		return math.min(a, b)
-	else:
-		newNum = math.max(a, b) - (long)(math.max(a, b) / math.min(a, b)) * math.min(a, b)
-		return gcd(newNum, math.min(a, b))
+    while b != 0:
+        (a, b) = (b, a % b)
+    return a
  
 def linearCombo(a, b):
 	if (a - b == gcd(a, b)):
