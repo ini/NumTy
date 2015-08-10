@@ -22,7 +22,7 @@ def incongruentSols(a, b, c):
         solutions = set()
         if (b % gcd(a, c) == 0):
                 numSols = gcd(a, c);
-                sol = (c + b * linearCombo(a, c)[0] / numSols) % c;
+                sol = (c + b * egcd(a, c)[0] / numSols) % c;
                 for i in xrange(0, numSols):
                         solutions.add((sol + c * i / numSols) % c)
         return solutions
