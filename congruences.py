@@ -44,7 +44,7 @@ def linCongr(a, b, m):
         return solutions
 
 # Uses the Chinese Remainder Theorem to solve a system of linear congruences
-def CRT(congruences):
+def crt(congruences):
         x = 0
         M = 1
         for i in xrange(len(congruences)):
@@ -87,7 +87,7 @@ def linCongrSystem(congruences):
                 if not isRedundant:
                         finalCongruences.append(newCongruences[k])
 
-        return CRT(finalCongruences)
+        return crt(finalCongruences)
 
 # Returns incongruents solutions to a polynomial congruence
 def polyCongr(coefficients, m):
