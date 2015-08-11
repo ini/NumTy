@@ -32,7 +32,6 @@ def reduceCongr(a, b, m):
         b *= modinv
         return (1, b, m)
         
-
 # Returns the incongruent solutions to the linear congruences ax = b(mod m)
 def linCongr(a, b, m):
         solutions = set()
