@@ -1,6 +1,6 @@
 import math
 import random
-import linear_congruences as lc
+import congruences as congr
 
 
 def miller_rabin_pass(a, n):
@@ -159,13 +159,13 @@ def getFactor(n):
                         for i in range(min(m, r - k)):
                                 y = ((y*y) % n + c) % n
                                 q = q * (abs(x - y)) % n
-                        g = lc.gcd(q, n)
+                        g = congr.gcd(q, n)
                         k = k + m
                 r *= 2
         if g == n:
                 while True:
                         ys = ((ys*ys) % n + c) % n
-                        g = lc.gcd(abs(x - ys), n)
+                        g = congr.gcd(abs(x - ys), n)
                         if g > 1:
                                 break
          
