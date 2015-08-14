@@ -100,9 +100,9 @@ def bernoulli(n):
         # Uses Akiyama–Tanigawa algorithm to calculate nth Bernoulli number
         if n % 2 == 1 and n > 3:
                 return 0
-        A = [0] * (n+1)
-        for m in range(n+1):
-                A[m] = Fr(1, m+1)
+        A = [0] * (n + 1)
+        for m in range(n + 1):
+                A[m] = Fr(1, m + 1)
                 for j in range(m, 0, -1):
-                        A[j-1] = j*(A[j-1] - A[j])
+                        A[j - 1] = j * (A[j - 1] - A[j])
         return A[0]
