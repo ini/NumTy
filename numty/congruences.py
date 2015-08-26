@@ -22,7 +22,7 @@ def modInverse(a, m):
     if gcd(a, m) == 1:
         return x % m
 
-# Reduces each linear congruence to form x = b(mod m)
+# Reduces linear congruence to form x = b(mod m)
 def reduceCongr(a, b, m):
         gcdAB = gcd(a, b)
         a /= gcdAB
@@ -32,7 +32,7 @@ def reduceCongr(a, b, m):
         b *= modinv
         return (1, b, m)
         
-# Returns the incongruent solutions to the linear congruences ax = b(mod m)
+# Returns the incongruent solutions to the linear congruence ax = b(mod m)
 def linCongr(a, b, m):
         solutions = set()
         if (b % gcd(a, m) == 0):

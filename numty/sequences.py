@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from fractions import Fraction as Fr
 import primes as ps
-import multiplicative_functions as mf
+import multFunc as mf
 import math
 
 def additiveSequence(n, t0, t1):

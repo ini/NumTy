@@ -1,20 +1,17 @@
 import congruences as congr
-import quadratic_residues as qr
+import quadResidues as qr
 import primes as ps
 
-n = 7  # For Legendre, Jacobi and Kronecker symbol evaluation
-
-def gcd(a, b):
-  return congr.gcd(a, b)
+modulus = 7  # For Legendre, Jacobi and Kronecker symbol evaluation
 
 def legendre(a):
-  return qr.legendre(a, n)
+  return qr.legendre(a, modulus)
 
 def jacobi(a):
-  return qr.jacobi(a, n)
+  return qr.jacobi(a, modulus)
 
 def kronecker(a):
-  return qr.kronecker(a)
+  return qr.kronecker(a, modulus)
 
 def one(n):
 	return 1
