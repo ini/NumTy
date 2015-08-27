@@ -137,6 +137,8 @@ def atkin(num):
                 if primes[n]:
                         for k in range(n * n, num, n * n):
                                 primes[k] = False
+        if num == 2:
+                return [2]
         return [2,3] + filter(primes.__getitem__, xrange(5, num, 2))
 
 def pi(n):
