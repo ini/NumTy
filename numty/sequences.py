@@ -49,6 +49,17 @@ def deficient(n):
                 if mf.sigma(num) < 2 * num:
                         count += 1
         return num
+
+def perfect(n):
+        count = 0
+        num = 0
+        potentialPerfect = 0
+        while count < n:
+                potentialPerfect = 1 + (2**num - 2) * (2**num + 1) / 2
+                if mf.sigma(potentialPerfect) == 2 * potentialPerfect:
+                        count += 1
+                num += 1
+        return potentialPerfect
         
 def aliquot(k, n):
         # Returns the nth member of the sequence defined by {s_0 = k, s_n = σ(s_n−1) − s_n−1}
